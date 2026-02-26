@@ -51,41 +51,17 @@
         
         .product-card { 
             position: relative;
-            background: var(--card); 
-            border-radius: 15px; 
-            padding: 10px; 
-            display: none; 
-            flex-direction: column; 
-            overflow: hidden;
-            transition: 0.3s;
-            z-index: 1;
+            background: var(--card); border-radius: 15px; padding: 10px; display: none; flex-direction: column; overflow: hidden; transition: 0.3s; z-index: 1;
         }
-
-        /* EFEK RGB GARIS MUTER DI LIST KOTAK */
         .product-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
             background: conic-gradient(transparent, transparent, transparent, #00ffff, #ff00ff, #3b82f6);
-            animation: rotateRGB 4s linear infinite;
-            z-index: -2;
+            animation: rotateRGB 4s linear infinite; z-index: -2;
         }
-
         .product-card::after {
-            content: '';
-            position: absolute;
-            inset: 2px;
-            background: #0d1117;
-            border-radius: 13px;
-            z-index: -1;
+            content: ''; position: absolute; inset: 2px; background: #0d1117; border-radius: 13px; z-index: -1;
         }
-
-        @keyframes rotateRGB {
-            100% { transform: rotate(360deg); }
-        }
+        @keyframes rotateRGB { 100% { transform: rotate(360deg); } }
 
         .product-card.show { display: flex; animation: zoomIn 0.4s ease forwards; }
         @keyframes zoomIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
@@ -94,6 +70,28 @@
         .product-card h3 { font-size: 0.65rem; text-align: center; margin: 5px 0 10px; height: 32px; overflow: hidden; color: #e2e8f0; position: relative; }
         .tag-game { position: absolute; top: 15px; right: 15px; font-size: 0.55rem; padding: 3px 8px; border-radius: 5px; font-weight: 900; z-index: 2; }
         .buy-btn { background: linear-gradient(90deg, var(--primary), #8b5cf6); color: #fff; font-size: 0.65rem; text-align: center; padding: 8px; border-radius: 7px; font-weight: 800; cursor: pointer; position: relative; }
+
+        /* FOOTER & BENEFIT CARDS (YANG BARU DIBALIKIN) */
+        .footer-section { max-width: 1000px; margin: 40px auto; padding: 0 15px; }
+        
+        .benefit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 25px; }
+        .benefit-box { background: var(--card); border: 1px solid rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; text-align: left; }
+        .benefit-box i { font-size: 1.2rem; margin-bottom: 10px; display: block; }
+        .benefit-box h4 { margin: 0; font-size: 0.9rem; font-weight: 800; color: #fff; }
+        .benefit-box p { margin: 5px 0 0; font-size: 0.7rem; color: #94a3b8; line-height: 1.4; }
+
+        .contact-btns { display: flex; gap: 10px; margin-bottom: 25px; }
+        .btn-contact { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 10px; text-decoration: none; color: #fff; font-weight: 800; font-size: 0.85rem; }
+        .btn-wa { background: #2563eb; } .btn-telegram { background: #3b82f6; }
+
+        .payment-method { 
+            background: var(--card); border-radius: 15px; padding: 20px; text-align: center; 
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .payment-method h4 { font-size: 0.8rem; color: #94a3b8; margin: 0 0 15px; text-transform: uppercase; letter-spacing: 2px; }
+        .payment-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .pay-icon { background: #fff; padding: 5px; border-radius: 5px; width: 55px; height: 28px; display: flex; align-items: center; justify-content: center; }
+        .pay-icon img { max-width: 100%; max-height: 100%; }
 
         /* MODAL */
         .modal { display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); }
@@ -104,33 +102,14 @@
         @keyframes modalGlow { from { border-color: var(--primary); } to { border-color: #ff00ff; } }
         .close-modal { position: absolute; right: 20px; top: 15px; font-size: 25px; cursor: pointer; color: #94a3b8; }
         .user-input-box input { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #334155; background: #020617; color: #fff; box-sizing: border-box; outline: none; }
-        
         .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 15px 0; max-height: 250px; overflow-y: auto; }
         .price-item { border: 1px solid #334155; padding: 10px; border-radius: 10px; cursor: pointer; text-align: center; background: rgba(255,255,255,0.02); }
         .price-item.active { border-color: #00ffff; background: rgba(59, 130, 246, 0.2); }
-
         #qris-area { display: none; text-align: center; margin-top: 15px; background: #fff; border-radius: 10px; padding: 10px; }
         #qris-area img { width: 100%; max-width: 250px; display: inline-block; }
         .btn-tele { display: none; width: 100%; background: #0088cc; color: #fff; padding: 12px; border: none; border-radius: 10px; font-weight: bold; margin-top: 15px; cursor: pointer; }
-
         .rgb-text { font-weight: 900; font-size: 13px; margin-bottom: 10px; animation: rgb-animation 2s linear infinite; }
-        @keyframes rgb-animation {
-            0% { color: #ff0000; } 33% { color: #00ff00; } 66% { color: #0000ff; } 100% { color: #ff0000; }
-        }
-
-        .footer-section { max-width: 1000px; margin: 40px auto; padding: 0 15px; }
-        .contact-btns { display: flex; gap: 10px; margin-bottom: 25px; }
-        .btn-contact { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 10px; text-decoration: none; color: #fff; font-weight: 800; font-size: 0.85rem; }
-        .btn-wa { background: #2563eb; } .btn-telegram { background: #3b82f6; }
-
-        .payment-method { 
-            background: var(--card); border-radius: 15px; padding: 20px; text-align: center; 
-            border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 0 15px rgba(0,0,0,0.5);
-        }
-        .payment-method h4 { font-size: 0.8rem; color: #94a3b8; margin: 0 0 15px; text-transform: uppercase; letter-spacing: 2px; }
-        .payment-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-        .pay-icon { background: #fff; padding: 5px; border-radius: 5px; width: 55px; height: 28px; display: flex; align-items: center; justify-content: center; }
-        .pay-icon img { max-width: 100%; max-height: 100%; }
+        @keyframes rgb-animation { 0% { color: #ff0000; } 33% { color: #00ff00; } 66% { color: #0000ff; } 100% { color: #ff0000; } }
 
         @media (max-width: 600px) { .product-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; } .header-video { width: 140px; height: 140px; } }
     </style>
@@ -162,17 +141,38 @@
         <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img7.jpg"><h3>REAPER X PRO</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
         <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img8.jpg"><h3>HEX BLADE</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
         <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img9.jpg"><h3>ELEVEN V3</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
-        
         <div class="product-card pool show"><span class="tag-game" style="background:var(--pool)">8BP</span><img src="pool1.jpg"><h3>Glass Engine</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
         <div class="product-card pubg show"><span class="tag-game" style="background:var(--pubg)">PUBG</span><img src="pubg1.jpg"><h3>PUBGM USERCHEAT</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
         <div class="product-card pubg show"><span class="tag-game" style="background:var(--pubg)">PUBG</span><img src="pubg2.jpg"><h3>XTHAX PLUS</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
         <div class="product-card bs show"><span class="tag-game" style="background:var(--bs)">BS</span><img src="bs1.jpg"><h3>PutraModz BS</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
-        
         <div class="product-card reseller"><span class="tag-game" style="background:var(--reseller)">WEB 1</span><img src="reseller1.jpg"><h3>GET CIT 12 (RES/OWNER)</h3><div class="buy-btn" onclick="openModal('web1')">CEK HARGA</div></div>
         <div class="product-card reseller"><span class="tag-game" style="background:var(--reseller)">WEB 2</span><img src="reseller2.jpg"><h3>GET CIT 7/8 (RES/OWNER)</h3><div class="buy-btn" onclick="openModal('web2')">CEK HARGA</div></div>
     </div>
 
     <div class="footer-section">
+        <div class="benefit-grid">
+            <div class="benefit-box">
+                <i class="fa-solid fa-dollar-sign" style="color: #2ed573;"></i>
+                <h4>Harga Termurah</h4>
+                <p>Harga ramah & kompetitif</p>
+            </div>
+            <div class="benefit-box">
+                <i class="fa-solid fa-bolt" style="color: #ffa502;"></i>
+                <h4>Proses Kilat</h4>
+                <p>Fast respon & pengerjaan cepat</p>
+            </div>
+            <div class="benefit-box">
+                <i class="fa-solid fa-lock" style="color: #ffa502;"></i>
+                <h4>Aman & Terpercaya</h4>
+                <p>Trusted seller & aman</p>
+            </div>
+            <div class="benefit-box">
+                <i class="fa-solid fa-clock" style="color: #fff;"></i>
+                <h4>Open 24 Jam</h4>
+                <p>Siap melayani kapan saja</p>
+            </div>
+        </div>
+
         <div class="contact-btns">
             <a href="https://wa.me/62812345678" target="_blank" class="btn-contact btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
             <a href="https://t.me/Cek121212" target="_blank" class="btn-contact btn-telegram"><i class="fa-brands fa-telegram"></i> Telegram</a>
