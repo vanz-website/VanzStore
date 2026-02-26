@@ -51,30 +51,24 @@
         #qris-area img { width: 100%; max-width: 250px; display: inline-block; }
         .btn-tele { display: none; width: 100%; background: #0088cc; color: #fff; padding: 12px; border: none; border-radius: 10px; font-weight: bold; margin-top: 15px; cursor: pointer; }
 
-        /* --- TAMBAHAN STYLE BARU (FOOTER AREA) --- */
+        /* FOOTER AREA */
         .footer-section { max-width: 1000px; margin: 40px auto; padding: 0 15px; }
         .benefit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
         .benefit-card { background: var(--card); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
         .benefit-card i { color: #fbbf24; font-size: 1.2rem; margin-bottom: 10px; display: block; }
         .benefit-card h4 { margin: 0; font-size: 0.9rem; font-weight: 800; }
         .benefit-card p { font-size: 0.75rem; color: #94a3b8; margin: 5px 0 0; line-height: 1.4; }
-        
         .contact-btns { display: flex; gap: 10px; margin-bottom: 40px; }
         .btn-contact { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 10px; text-decoration: none; color: #fff; font-weight: 800; font-size: 0.85rem; }
-        .btn-wa { background: #2563eb; } /* Menyesuaikan warna biru di SS */
+        .btn-wa { background: #2563eb; }
         .btn-telegram { background: #3b82f6; }
-
         .payment-method { background: var(--card); border-radius: 15px; padding: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
         .payment-method h4 { font-size: 0.8rem; letter-spacing: 2px; color: #94a3b8; margin: 0 0 20px; text-transform: uppercase; }
         .payment-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
         .pay-icon { background: #fff; padding: 5px 10px; border-radius: 6px; width: 60px; height: 30px; display: flex; align-items: center; justify-content: center; }
-        .pay-icon img { max-width: 100%; max-height: 100%; filter: grayscale(0); }
+        .pay-icon img { max-width: 100%; max-height: 100%; }
 
-        @media (max-width: 600px) { 
-            .product-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; } 
-            .header-video { width: 140px; height: 140px; } 
-            .benefit-grid { gap: 10px; }
-        }
+        @media (max-width: 600px) { .product-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; } .header-video { width: 140px; height: 140px; } }
     </style>
 </head>
 <body>
@@ -82,7 +76,6 @@
     <div class="header-vanz">
         <video class="header-video" autoplay loop muted playsinline>
             <source src="vidio.mp4" type="video/mp4">
-            Browser lo gak support video pler.
         </video>
     </div>
 
@@ -113,33 +106,15 @@
 
     <div class="footer-section">
         <div class="benefit-grid">
-            <div class="benefit-card">
-                <i class="fa-solid fa-dollar-sign"></i>
-                <h4>Harga Termurah</h4>
-                <p>Harga ramah & kompetitif</p>
-            </div>
-            <div class="benefit-card">
-                <i class="fa-solid fa-bolt"></i>
-                <h4>Proses Kilat</h4>
-                <p>Fast respon & pengerjaan cepat</p>
-            </div>
-            <div class="benefit-card">
-                <i class="fa-solid fa-lock"></i>
-                <h4>Aman & Terpercaya</h4>
-                <p>Trusted seller & aman</p>
-            </div>
-            <div class="benefit-card">
-                <i class="fa-solid fa-clock"></i>
-                <h4>Open 24 Jam</h4>
-                <p>Siap melayani kapan saja</p>
-            </div>
+            <div class="benefit-card"><i class="fa-solid fa-dollar-sign"></i><h4>Harga Termurah</h4><p>Harga ramah & kompetitif</p></div>
+            <div class="benefit-card"><i class="fa-solid fa-bolt"></i><h4>Proses Kilat</h4><p>Fast respon & pengerjaan cepat</p></div>
+            <div class="benefit-card"><i class="fa-solid fa-lock"></i><h4>Aman & Terpercaya</h4><p>Trusted seller & aman</p></div>
+            <div class="benefit-card"><i class="fa-solid fa-clock"></i><h4>Open 24 Jam</h4><p>Siap melayani kapan saja</p></div>
         </div>
-
         <div class="contact-btns">
-            <a href="https://wa.me/NOMOR_LO" class="btn-contact btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <a href="https://t.me/VanzXTP" class="btn-contact btn-telegram"><i class="fa-brands fa-telegram"></i> Telegram</a>
+            <a href="https://wa.me/62812345678" class="btn-contact btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://t.me/Cek121212" class="btn-contact btn-telegram"><i class="fa-brands fa-telegram"></i> Telegram</a>
         </div>
-
         <div class="payment-method">
             <h4>Payment Method</h4>
             <div class="payment-flex">
@@ -147,8 +122,6 @@
                 <div class="pay-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_dana_blue.svg" alt="DANA"></div>
                 <div class="pay-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Gopay_logo.svg" alt="GOPAY"></div>
                 <div class="pay-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Logo_ovo_purple.svg" alt="OVO"></div>
-                <div class="pay-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg" alt="BCA"></div>
-                <div class="pay-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Bank_Mandiri_logo_2016.svg" alt="MANDIRI"></div>
             </div>
         </div>
     </div>
@@ -162,17 +135,22 @@
                 <input type="text" id="reqUser" placeholder="Masukkan Username...">
             </div>
             <div class="price-grid">
-                <div class="price-item" onclick="setPrice('1 Day', '10k/1$', this)"><b>1 Day</b><span>10k/1$</span></div>
-                <div class="price-item" onclick="setPrice('3 Day', '30k/2$', this)"><b>3 Day</b><span>30k/2$</span></div>
-                <div class="price-item" onclick="setPrice('5 Day', '40k/3$', this)"><b>5 Day</b><span>40k/3$</span></div>
-                <div class="price-item" onclick="setPrice('7 Day', '50k/4$', this)"><b>7 Day</b><span>50k/4$</span></div>
-                <div class="price-item" onclick="setPrice('10 Day', '60k/5$', this)"><b>10 Day</b><span>60k/5$</span></div>
-                <div class="price-item" onclick="setPrice('15 Day', '70k/6$', this)"><b>15 Day</b><span>70k/6$</span></div>
-                <div class="price-item" onclick="setPrice('30 Day', '100k/10$', this)"><b>30 Day</b><span>100k/10$</span></div>
-                <div class="price-item" onclick="setPrice('365 Day', '300k/25$', this)"><b>365 Day</b><span>300k/25$</span></div>
+                <div class="price-item" onclick="setPrice('1 Day', '10k/1$', this)"><b>1 Day</b><span> 10k/1$</span></div>
+                <div class="price-item" onclick="setPrice('3 Day', '30k/2$', this)"><b>3 Day</b><span> 30k/2$</span></div>
+                <div class="price-item" onclick="setPrice('5 Day', '40k/3$', this)"><b>5 Day</b><span> 40k/3$</span></div>
+                <div class="price-item" onclick="setPrice('7 Day', '50k/4$', this)"><b>7 Day</b><span> 50k/4$</span></div>
+                <div class="price-item" onclick="setPrice('10 Day', '60k/5$', this)"><b>10 Day</b><span> 60k/5$</span></div>
+                <div class="price-item" onclick="setPrice('15 Day', '70k/6$', this)"><b>15 Day</b><span> 70k/6$</span></div>
+                <div class="price-item" onclick="setPrice('30 Day', '100k/10$', this)"><b>30 Day</b><span> 100k/10$</span></div>
+                <div class="price-item" onclick="setPrice('365 Day', '300k/25$', this)"><b>365 Day</b><span> 300k/25$</span></div>
             </div>
             <button id="showQris" style="width:100%; padding:10px; border-radius:10px; background:var(--primary); color:#fff; border:none; font-weight:bold; cursor:pointer;" onclick="displayQris()">BAYAR VIA QRIS</button>
-            <div id="qris-area"><img src="qris.jpg" alt="QRIS PAYMENT"></div> 
+            
+            <div id="qris-area">
+                <p style="color: #000; font-size: 12px; font-weight: bold; margin-bottom: 10px;">TOLONG KIRIM BUKTI TF UNTUK KONFIRMASI KE ADMIN</p>
+                <img src="qris.jpg" alt="QRIS PAYMENT">
+            </div> 
+            
             <button id="btnConfirm" class="btn-tele" onclick="sendTele()">KONFIRMASI KE TELEGRAM</button>
         </div>
     </div>
@@ -193,12 +171,24 @@
         function openModal(name) { selectedItem = name; document.getElementById('modalTitle').innerText = name; document.getElementById('orderModal').style.display = "block"; }
         function closeModal() { document.getElementById('orderModal').style.display = "none"; document.getElementById('qris-area').style.display = "none"; document.getElementById('btnConfirm').style.display = "none"; document.getElementById('showQris').style.display = "block"; }
         function setPrice(dur, price, el) { selectedDuration = dur; selectedPriceTag = price; const items = document.querySelectorAll('.price-item'); items.forEach(i => i.classList.remove('active')); el.classList.add('active'); }
-        function displayQris() { if(!selectedDuration) return alert("Pilih paket dulu pler!"); document.getElementById('qris-area').style.display = "block"; document.getElementById('btnConfirm').style.display = "block"; document.getElementById('showQris').style.display = "none"; }
+        
+        // VALIDASI USERNAME SEBELUM QRIS MUNCUL
+        function displayQris() { 
+            const user = document.getElementById('reqUser').value.trim();
+            if(!selectedDuration) return alert("Pilih paket dulu pler!"); 
+            if(!user) return alert("Ketik Username dulu plerr!"); // Validasi Username
+            
+            document.getElementById('qris-area').style.display = "block"; 
+            document.getElementById('btnConfirm').style.display = "block"; 
+            document.getElementById('showQris').style.display = "none"; 
+        }
+
+        // AUTO-TEXT KE TELEGRAM
         function sendTele() { 
-            const reqUser = document.getElementById('reqUser').value || "Default";
-            const msg = `Halo VanzXTP, saya mau order:\n🚀 Produk: ${selectedItem}\n⏱ Durasi: ${selectedDuration}\n💰 Harga: ${selectedPriceTag}\n👤 Req User: ${reqUser}`; 
+            const user = document.getElementById('reqUser').value.trim();
+            const msg = `bang aku udah buy username ${user}`; // Pesan khusus pesanan lo bray
             window.open(`https://t.me/${teleOwner}?text=${encodeURIComponent(msg)}`, '_blank'); 
         }
     </script>
 </body>
-                                                                                                           </html>
+                                                                                                                                                 </html>
