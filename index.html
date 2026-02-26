@@ -71,15 +71,14 @@
         .tag-game { position: absolute; top: 15px; right: 15px; font-size: 0.55rem; padding: 3px 8px; border-radius: 5px; font-weight: 900; z-index: 2; }
         .buy-btn { background: linear-gradient(90deg, var(--primary), #8b5cf6); color: #fff; font-size: 0.65rem; text-align: center; padding: 8px; border-radius: 7px; font-weight: 800; cursor: pointer; position: relative; }
 
-        /* FOOTER & BENEFIT CARDS (YANG BARU DIBALIKIN) */
-        .footer-section { max-width: 1000px; margin: 40px auto; padding: 0 15px; }
-        
+        /* BENEFIT SECTION */
         .benefit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 25px; }
         .benefit-box { background: var(--card); border: 1px solid rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; text-align: left; }
         .benefit-box i { font-size: 1.2rem; margin-bottom: 10px; display: block; }
         .benefit-box h4 { margin: 0; font-size: 0.9rem; font-weight: 800; color: #fff; }
         .benefit-box p { margin: 5px 0 0; font-size: 0.7rem; color: #94a3b8; line-height: 1.4; }
 
+        .footer-section { max-width: 1000px; margin: 40px auto; padding: 0 15px; }
         .contact-btns { display: flex; gap: 10px; margin-bottom: 25px; }
         .btn-contact { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 10px; text-decoration: none; color: #fff; font-weight: 800; font-size: 0.85rem; }
         .btn-wa { background: #2563eb; } .btn-telegram { background: #3b82f6; }
@@ -132,21 +131,23 @@
     </div>
 
     <div class="product-grid" id="container">
-        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img1.jpg"><h3>LK Team</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
-        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img2.jpg"><h3>STRICKS BR</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
-        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img3.jpg"><h3>Beyond Cheats</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
-        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img4.jpg"><h3>XTFFHAX</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
-        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img5.jpg"><h3>BRMODS</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
-        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img6.jpg"><h3>EAGLE CHEATS</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
-        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img7.jpg"><h3>REAPER X PRO</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
-        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img8.jpg"><h3>HEX BLADE</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
-        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img9.jpg"><h3>ELEVEN V3</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
-        <div class="product-card pool show"><span class="tag-game" style="background:var(--pool)">8BP</span><img src="pool1.jpg"><h3>Glass Engine</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
-        <div class="product-card pubg show"><span class="tag-game" style="background:var(--pubg)">PUBG</span><img src="pubg1.jpg"><h3>PUBGM USERCHEAT</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
-        <div class="product-card pubg show"><span class="tag-game" style="background:var(--pubg)">PUBG</span><img src="pubg2.jpg"><h3>XTHAX PLUS</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
-        <div class="product-card bs show"><span class="tag-game" style="background:var(--bs)">BS</span><img src="bs1.jpg"><h3>PutraModz BS</h3><div class="buy-btn" onclick="openModal('cheat')">BELI</div></div>
-        <div class="product-card reseller"><span class="tag-game" style="background:var(--reseller)">WEB 1</span><img src="reseller1.jpg"><h3>GET CIT 12 (RES/OWNER)</h3><div class="buy-btn" onclick="openModal('web1')">CEK HARGA</div></div>
-        <div class="product-card reseller"><span class="tag-game" style="background:var(--reseller)">WEB 2</span><img src="reseller2.jpg"><h3>GET CIT 7/8 (RES/OWNER)</h3><div class="buy-btn" onclick="openModal('web2')">CEK HARGA</div></div>
+        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img1.jpg"><h3>LK Team</h3><div class="buy-btn" onclick="openModal('cheat', 'LK Team')">BELI</div></div>
+        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img2.jpg"><h3>STRICKS BR</h3><div class="buy-btn" onclick="openModal('cheat', 'STRICKS BR')">BELI</div></div>
+        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img3.jpg"><h3>Beyond Cheats</h3><div class="buy-btn" onclick="openModal('cheat', 'Beyond Cheats')">BELI</div></div>
+        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img4.jpg"><h3>XTFFHAX</h3><div class="buy-btn" onclick="openModal('cheat', 'XTFFHAX')">BELI</div></div>
+        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img5.jpg"><h3>BRMODS</h3><div class="buy-btn" onclick="openModal('cheat', 'BRMODS')">BELI</div></div>
+        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img6.jpg"><h3>EAGLE CHEATS</h3><div class="buy-btn" onclick="openModal('cheat', 'EAGLE CHEATS')">BELI</div></div>
+        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img7.jpg"><h3>REAPER X PRO</h3><div class="buy-btn" onclick="openModal('cheat', 'REAPER X PRO')">BELI</div></div>
+        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img8.jpg"><h3>HEX BLADE</h3><div class="buy-btn" onclick="openModal('cheat', 'HEX BLADE')">BELI</div></div>
+        <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img9.jpg"><h3>ELEVEN V3</h3><div class="buy-btn" onclick="openModal('cheat', 'ELEVEN V3')">BELI</div></div>
+        
+        <div class="product-card pool show"><span class="tag-game" style="background:var(--pool)">8BP</span><img src="pool1.jpg"><h3>Glass Engine</h3><div class="buy-btn" onclick="openModal('cheat', 'Glass Engine 8BP')">BELI</div></div>
+        <div class="product-card pubg show"><span class="tag-game" style="background:var(--pubg)">PUBG</span><img src="pubg1.jpg"><h3>PUBGM USERCHEAT</h3><div class="buy-btn" onclick="openModal('cheat', 'PUBGM USERCHEAT')">BELI</div></div>
+        <div class="product-card pubg show"><span class="tag-game" style="background:var(--pubg)">PUBG</span><img src="pubg2.jpg"><h3>XTHAX PLUS</h3><div class="buy-btn" onclick="openModal('cheat', 'XTHAX PLUS PUBG')">BELI</div></div>
+        <div class="product-card bs show"><span class="tag-game" style="background:var(--bs)">BS</span><img src="bs1.jpg"><h3>PutraModz BS</h3><div class="buy-btn" onclick="openModal('cheat', 'PutraModz Bloodstrike')">BELI</div></div>
+        
+        <div class="product-card reseller show"><span class="tag-game" style="background:var(--reseller)">WEB 1</span><img src="reseller1.jpg"><h3>GET CIT 12 (RES/OWNER)</h3><div class="buy-btn" onclick="openModal('web1', 'GET CIT 12 (WEB 1)')">CEK HARGA</div></div>
+        <div class="product-card reseller show"><span class="tag-game" style="background:var(--reseller)">WEB 2</span><img src="reseller2.jpg"><h3>GET CIT 7/8 (RES/OWNER)</h3><div class="buy-btn" onclick="openModal('web2', 'GET CIT 7/8 (WEB 2)')">CEK HARGA</div></div>
     </div>
 
     <div class="footer-section">
@@ -210,6 +211,8 @@
 
     <script>
         let selectedDuration = "";
+        let selectedProductName = ""; 
+
         const prices = {
             cheat: [{d:'1 Day', p:'10k/1$'},{d:'3 Day', p:'30k/2$'},{d:'5 Day', p:'40k/3$'},{d:'7 Day', p:'50k/4$'},{d:'10 Day', p:'60k/5$'},{d:'15 Day', p:'70k/6$'},{d:'30 Day', p:'100k/10$'},{d:'365 Day', p:'300k/25$'}],
             web1: [{d:'Reseller 15 Day', p:'100k/8$'},{d:'Reseller 30 Day', p:'150k/10$'},{d:'Reseller Season', p:'300k/20$'},{d:'Admin Season', p:'500k/35$'},{d:'Owner 30D', p:'800k/41$'}],
@@ -223,7 +226,8 @@
             cards.forEach(card => (category === 'all' || card.classList.contains(category)) ? card.classList.add('show') : card.classList.remove('show'));
         }
 
-        function openModal(type) {
+        function openModal(type, name) {
+            selectedProductName = name;
             const grid = document.getElementById('priceGrid'); grid.innerHTML = "";
             prices[type].forEach(item => {
                 const div = document.createElement('div'); div.className = "price-item";
@@ -234,7 +238,7 @@
             document.getElementById('orderModal').style.display = "block";
         }
 
-        function closeModal() { document.getElementById('orderModal').style.display = "none"; document.getElementById('qris-area').style.display = "none"; document.getElementById('btnConfirm').style.display = "none"; document.getElementById('showQris').style.display = "block"; selectedDuration = ""; }
+        function closeModal() { document.getElementById('orderModal').style.display = "none"; document.getElementById('qris-area').style.display = "none"; document.getElementById('btnConfirm').style.display = "none"; document.getElementById('showQris').style.display = "block"; selectedDuration = ""; selectedProductName = ""; }
 
         function displayQris() { 
             const user = document.getElementById('reqUser').value.trim();
@@ -244,7 +248,7 @@
 
         function sendTele() { 
             const user = document.getElementById('reqUser').value.trim();
-            const msg = `bang aku udah buy username <${user}> paket ${selectedDuration}`; 
+            const msg = `bang aku udah buy produk: [${selectedProductName}] \nUsername: <${user}> \nPaket: ${selectedDuration}`; 
             window.open(`https://t.me/Cek121212?text=${encodeURIComponent(msg)}`, '_blank'); 
         }
     </script>
