@@ -15,7 +15,7 @@
         /* HEADER - VIDEO REPLACE TEXT */
         .header-vanz { text-align: center; padding: 30px 20px; background: radial-gradient(circle at center, rgba(59, 130, 246, 0.15) 0%, transparent 75%); }
         .header-video {
-            width: 180px; /* Ukuran kotak bray */
+            width: 180px; 
             height: 180px;
             object-fit: cover;
             border-radius: 20px;
@@ -47,8 +47,11 @@
         .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 15px 0; }
         .price-item { border: 1px solid #334155; padding: 10px; border-radius: 10px; cursor: pointer; text-align: center; }
         .price-item.active { border-color: var(--primary); background: rgba(59, 130, 246, 0.1); }
+        
+        /* FIX QRIS AREA */
         #qris-area { display: none; text-align: center; margin-top: 15px; background: #fff; border-radius: 10px; padding: 10px; }
-        #qris-area img { width: 100%; max-width: 200px; }
+        #qris-area img { width: 100%; max-width: 250px; display: inline-block; }
+        
         .btn-tele { display: none; width: 100%; background: #0088cc; color: #fff; padding: 12px; border: none; border-radius: 10px; font-weight: bold; margin-top: 15px; cursor: pointer; }
 
         @media (max-width: 600px) { .product-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; } .header-video { width: 140px; height: 140px; } }
@@ -83,10 +86,8 @@
         <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img9.jpg"><h3>ELEVEN V3</h3><div class="buy-btn" onclick="openModal('ELEVEN V3 FF')">BELI</div></div>
 
         <div class="product-card pool show"><span class="tag-game" style="background:var(--pool)">8BP</span><img src="pool1.jpg"><h3>Glass Engine</h3><div class="buy-btn" onclick="openModal('Glass Engine 8BP')">BELI</div></div>
-
         <div class="product-card pubg show"><span class="tag-game" style="background:var(--pubg)">PUBG</span><img src="pubg1.jpg"><h3>PUBGM USERCHEAT</h3><div class="buy-btn" onclick="openModal('PUBGM USERCHEAT')">BELI</div></div>
         <div class="product-card pubg show"><span class="tag-game" style="background:var(--pubg)">PUBG</span><img src="pubg2.jpg"><h3>XTHAX PLUS</h3><div class="buy-btn" onclick="openModal('XTHAX PLUS PUBG')">BELI</div></div>
-
         <div class="product-card bs show"><span class="tag-game" style="background:var(--bs)">BS</span><img src="bs1.jpg"><h3>PutraModz BS</h3><div class="buy-btn" onclick="openModal('PutraModz BS')">BELI</div></div>
     </div>
 
@@ -110,7 +111,9 @@
             </div>
             <button id="showQris" style="width:100%; padding:10px; border-radius:10px; background:var(--primary); color:#fff; border:none; font-weight:bold; cursor:pointer;" onclick="displayQris()">BAYAR VIA QRIS</button>
             
-            <div id="qris-area"><img src="qris.jpg"></div> 
+            <div id="qris-area">
+                <img src="qris.jpg" alt="QRIS PAYMENT">
+            </div> 
             
             <button id="btnConfirm" class="btn-tele" onclick="sendTele()">KONFIRMASI KE TELEGRAM</button>
         </div>
@@ -132,7 +135,15 @@
         function openModal(name) { selectedItem = name; document.getElementById('modalTitle').innerText = name; document.getElementById('orderModal').style.display = "block"; }
         function closeModal() { document.getElementById('orderModal').style.display = "none"; document.getElementById('qris-area').style.display = "none"; document.getElementById('btnConfirm').style.display = "none"; document.getElementById('showQris').style.display = "block"; }
         function setPrice(dur, price, el) { selectedDuration = dur; selectedPriceTag = price; const items = document.querySelectorAll('.price-item'); items.forEach(i => i.classList.remove('active')); el.classList.add('active'); }
-        function displayQris() { if(!selectedDuration) return alert("Pilih paket dulu pler!"); document.getElementById('qris-area').style.display = "block"; document.getElementById('btnConfirm').style.display = "block"; document.getElementById('showQris').style.display = "none"; }
+        
+        // FUNGSI MUNCULIN QRIS
+        function displayQris() { 
+            if(!selectedDuration) return alert("Pilih paket dulu pler!"); 
+            document.getElementById('qris-area').style.display = "block"; 
+            document.getElementById('btnConfirm').style.display = "block"; 
+            document.getElementById('showQris').style.display = "none"; 
+        }
+
         function sendTele() { 
             const reqUser = document.getElementById('reqUser').value || "Default";
             const msg = `Halo VanzXTP, saya mau order:\n🚀 Produk: ${selectedItem}\n⏱ Durasi: ${selectedDuration}\n💰 Harga: ${selectedPriceTag}\n👤 Req User: ${reqUser}`; 
@@ -140,4 +151,4 @@
         }
     </script>
 </body>
-</html>
+            </html>
