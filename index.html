@@ -51,6 +51,20 @@
         #qris-area img { width: 100%; max-width: 250px; display: inline-block; }
         .btn-tele { display: none; width: 100%; background: #0088cc; color: #fff; padding: 12px; border: none; border-radius: 10px; font-weight: bold; margin-top: 15px; cursor: pointer; }
 
+        /* RGB TEXT ANIMATION */
+        .rgb-text {
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 10px;
+            animation: rgb-animation 2s linear infinite;
+        }
+        @keyframes rgb-animation {
+            0% { color: #ff0000; }
+            33% { color: #00ff00; }
+            66% { color: #0000ff; }
+            100% { color: #ff0000; }
+        }
+
         /* FOOTER AREA */
         .footer-section { max-width: 1000px; margin: 40px auto; padding: 0 15px; }
         .benefit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
@@ -59,7 +73,7 @@
         .benefit-card h4 { margin: 0; font-size: 0.9rem; font-weight: 800; }
         .benefit-card p { font-size: 0.75rem; color: #94a3b8; margin: 5px 0 0; line-height: 1.4; }
         .contact-btns { display: flex; gap: 10px; margin-bottom: 40px; }
-        .btn-contact { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 10px; text-decoration: none; color: #fff; font-weight: 800; font-size: 0.85rem; }
+        .btn-contact { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 10px; text-decoration: none; color: #fff; font-weight: 800; font-size: 0.85rem; cursor: pointer; }
         .btn-wa { background: #2563eb; }
         .btn-telegram { background: #3b82f6; }
         .payment-method { background: var(--card); border-radius: 15px; padding: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
@@ -97,7 +111,6 @@
         <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img7.jpg"><h3>REAPER X PRO</h3><div class="buy-btn" onclick="openModal('REAPER X PRO FF')">BELI</div></div>
         <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img8.jpg"><h3>HEX BLADE</h3><div class="buy-btn" onclick="openModal('HEX BLADE FF')">BELI</div></div>
         <div class="product-card ff show"><span class="tag-game" style="background:var(--ff)">FF</span><img src="img9.jpg"><h3>ELEVEN V3</h3><div class="buy-btn" onclick="openModal('ELEVEN V3 FF')">BELI</div></div>
-
         <div class="product-card pool show"><span class="tag-game" style="background:var(--pool)">8BP</span><img src="pool1.jpg"><h3>Glass Engine</h3><div class="buy-btn" onclick="openModal('Glass Engine 8BP')">BELI</div></div>
         <div class="product-card pubg show"><span class="tag-game" style="background:var(--pubg)">PUBG</span><img src="pubg1.jpg"><h3>PUBGM USERCHEAT</h3><div class="buy-btn" onclick="openModal('PUBGM USERCHEAT')">BELI</div></div>
         <div class="product-card pubg show"><span class="tag-game" style="background:var(--pubg)">PUBG</span><img src="pubg2.jpg"><h3>XTHAX PLUS</h3><div class="buy-btn" onclick="openModal('XTHAX PLUS PUBG')">BELI</div></div>
@@ -112,8 +125,8 @@
             <div class="benefit-card"><i class="fa-solid fa-clock"></i><h4>Open 24 Jam</h4><p>Siap melayani kapan saja</p></div>
         </div>
         <div class="contact-btns">
-            <a href="https://wa.me/62812345678" class="btn-contact btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <a href="https://t.me/Cek121212" class="btn-contact btn-telegram"><i class="fa-brands fa-telegram"></i> Telegram</a>
+            <a href="https://wa.me/62812345678" target="_blank" class="btn-contact btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://t.me/Cek121212" target="_blank" class="btn-contact btn-telegram"><i class="fa-brands fa-telegram"></i> Telegram</a>
         </div>
         <div class="payment-method">
             <h4>Payment Method</h4>
@@ -147,7 +160,7 @@
             <button id="showQris" style="width:100%; padding:10px; border-radius:10px; background:var(--primary); color:#fff; border:none; font-weight:bold; cursor:pointer;" onclick="displayQris()">BAYAR VIA QRIS</button>
             
             <div id="qris-area">
-                <p style="color: #000; font-size: 12px; font-weight: bold; margin-bottom: 10px;">TOLONG KIRIM BUKTI TF UNTUK KONFIRMASI KE ADMIN</p>
+                <p class="rgb-text">TOLONG KIRIM BUKTI TF UNTUK KONFIRMASI KE ADMIN</p>
                 <img src="qris.jpg" alt="QRIS PAYMENT">
             </div> 
             
@@ -157,7 +170,7 @@
 
     <script>
         let selectedItem = ""; let selectedDuration = ""; let selectedPriceTag = "";
-        const teleOwner = "VanzXTP";
+        const teleOwner = "Cek121212"; // USERNAME TELE TANPA @
 
         function filterGame(category, btn) {
             const cards = document.querySelectorAll('.product-card');
@@ -172,23 +185,22 @@
         function closeModal() { document.getElementById('orderModal').style.display = "none"; document.getElementById('qris-area').style.display = "none"; document.getElementById('btnConfirm').style.display = "none"; document.getElementById('showQris').style.display = "block"; }
         function setPrice(dur, price, el) { selectedDuration = dur; selectedPriceTag = price; const items = document.querySelectorAll('.price-item'); items.forEach(i => i.classList.remove('active')); el.classList.add('active'); }
         
-        // VALIDASI USERNAME SEBELUM QRIS MUNCUL
         function displayQris() { 
             const user = document.getElementById('reqUser').value.trim();
             if(!selectedDuration) return alert("Pilih paket dulu pler!"); 
-            if(!user) return alert("Ketik Username dulu plerr!"); // Validasi Username
+            if(!user) return alert("Ketik Username dulu plerr!"); 
             
             document.getElementById('qris-area').style.display = "block"; 
             document.getElementById('btnConfirm').style.display = "block"; 
             document.getElementById('showQris').style.display = "none"; 
         }
 
-        // AUTO-TEXT KE TELEGRAM
         function sendTele() { 
             const user = document.getElementById('reqUser').value.trim();
-            const msg = `bang aku udah buy username ${user}`; // Pesan khusus pesanan lo bray
+            const msg = `bang aku udah buy username ${user}`; 
+            // Membuka chat telegram secara otomatis
             window.open(`https://t.me/${teleOwner}?text=${encodeURIComponent(msg)}`, '_blank'); 
         }
     </script>
 </body>
-                                                                                                                                                 </html>
+                    </html>
